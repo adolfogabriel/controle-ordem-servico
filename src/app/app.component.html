@@ -1,6 +1,12 @@
-<app-cabecalho></app-cabecalho>
-<div>
-  <input [(ngModel)]="nome" placeholder="Seu nome">
-  <p>O seu nome é: {{ nome }}</p>
-</div>
+<header>
+  <app-cabecalho [dadosLogin]="dadosLogin"></app-cabecalho>
+</header>
+
+
+<main>
+    <app-login (loginEvent)="onLogin($event)"></app-login>
+  <router-outlet></router-outlet>
+</main>
+
+
 <app-rodape></app-rodape>

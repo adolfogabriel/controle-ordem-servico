@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-cabecalho',
@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./cabecalho.component.css']
 })
 export class CabecalhoComponent {
+  @Input() dadosLogin: { usuario: string} | undefined;
   title = 'Controle ordem servico';
+
   onButtonClick() {
     alert('Botão clicado!');
   }
