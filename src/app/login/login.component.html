@@ -1,4 +1,4 @@
-<div *ngIf="mostrarComponente" class="login-container">
+<div *ngIf="!authService.isLoggedInUser()">
   <h2>Login</h2>
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -11,4 +11,8 @@
     </div>
     <button type="submit">Entrar</button>
   </form>
+  <div *ngIf="loginError">Credenciais incorretas. Tente novamente.</div>
+</div>
+<div *ngIf="authService.isLoggedInUser()">
+  <h2>Você está logado!</h2>
 </div>

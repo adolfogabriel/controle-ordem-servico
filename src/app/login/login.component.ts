@@ -1,28 +1,31 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {Router} from '@angular/router';
+import {AuthService} from "../service/authservice";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-
-  @Output() loginEvent = new EventEmitter<{ usuario: string }>();
   username: string = '';
   password: string = '';
-  mostrarComponente: boolean = true;
+  loginError: boolean = false;
 
-  constructor(private router: Router) {
-  }
+  @Output() loginEvent = new EventEmitter<{ usuario: string }>();
 
-  onSubmit() {
-    if (this.username === 'adolfo' && this.password === '123456') {
-      this.mostrarComponente = false;
+  constructor( public authService: AuthService,  public router: Router) {}
+
+  onSubmit(): void {
+    const isAuthenticated = this.authService.login(this.username, this.password);
+
+    if (isAuthenticated) {
       this.loginEvent.emit({usuario: this.username});
       this.router.navigate(['/home']);
+      this.loginError = false;
     } else {
-      alert("Usuario ou senha incorretos")
+      this.loginError = true;
     }
   }
 }
