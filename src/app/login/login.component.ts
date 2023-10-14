@@ -12,6 +12,7 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   loginError: boolean = false;
+  isVisible = true;
 
   @Output() loginEvent = new EventEmitter<{ usuario: string }>();
 
@@ -24,8 +25,16 @@ export class LoginComponent {
       this.loginEvent.emit({usuario: this.username});
       this.router.navigate(['/home']);
       this.loginError = false;
+      this.isVisible = false;
+      const objeto = { nome: this.username};
+      localStorage.setItem('usuario', JSON.stringify(objeto));
     } else {
-      this.loginError = true;
+      const usuarioString = localStorage.getItem('usuario');
+      if (usuarioString != null) {
+        this.loginError = true;
+      }else {
+        this.loginError = true;
+      }
     }
   }
 }

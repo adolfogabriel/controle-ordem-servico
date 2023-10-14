@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {OsService} from "../service/os.service";
 
 @Component({
   selector: 'app-detalhes',
@@ -7,15 +8,23 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./detalhes.component.css']
 })
 export class DetalhesComponent implements OnInit {
-  id: number | undefined;
+  osId: number | undefined;
+  osDetalhes: any;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private osService: OsService) {
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      // @ts-ignore
-      this.id = +params.get('id');
+    this.route.params.subscribe(params => {
+      this.osId = +params['id'];
+
+      this.osService.getOsId(this.osId).subscribe(
+        (response) => {
+          this.osDetalhes = response;
+        },
+        (error) => {
+          alert('Erro na requisição:' + error);
+        });
     });
   }
 }

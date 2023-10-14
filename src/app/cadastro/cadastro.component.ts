@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {OsService} from "../service/os.service";
 
 @Component({
   selector: 'app-cadastro',
@@ -9,7 +10,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class CadastroComponent {
   dadosFormulario: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+
+  constructor(private osService: OsService, private fb: FormBuilder) {
     this.dadosFormulario = this.fb.group({
       nome: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -20,10 +22,10 @@ export class CadastroComponent {
 
   onSubmit() {
     if (this.dadosFormulario.valid) {
-      const dados = this.dadosFormulario.value;
-      localStorage.setItem('dados', JSON.stringify(dados));
-      this.dadosFormulario.reset();
-      alert("Dados salvos")
+      this.osService.postOs(this.dadosFormulario.value).subscribe(response => {
+        console.log('Dados salvos no servidor:', response);
+        this.dadosFormulario.reset();
+      });
     } else {
       // @ts-ignore
       if (this.dadosFormulario.get('nome').hasError('required')) {

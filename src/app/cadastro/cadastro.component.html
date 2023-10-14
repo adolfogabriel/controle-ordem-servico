@@ -20,7 +20,7 @@
     Telefone inválido (deve ter 10 dígitos).
   </div>
 
-  <label for="cpf">Telefone:</label>
+  <label for="cpf">Cpf:</label>
   <input type="text" id="cpf" formControlName="cpf">
   <div *ngIf="dadosFormulario.get('cpf')?.hasError('pattern') && dadosFormulario.get('cpf')?.touched">
     cpf inválido (deve ter 11 dígitos).
