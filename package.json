@@ -2,17 +2,15 @@
   "name": "controle-ordem-servico",
   "version": "0.0.0",
   "scripts": {
-    "scripts": {
-      "ng": "ng",
-      "start": "ng serve",
-      "build": "ng build --prod --base-href=/controle-ordem-servico/",
-      "ghpages": "angular-cli-ghpages --dir=dist/controle-ordem-servico",
-      "deploy": "npm run build & npm run ghpages",
-      "watch": "ng build --watch --configuration development",
-      "test": "ng test",
-      "json:server": "json-server --watch db.json",
-      "json:server:routes": "json-server --watch db.json --routes routes.json"
-    }
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod --base-href=/controle-ordem-servico/",
+    "ghpages": "angular-cli-ghpages --dir=dist/controle-ordem-servico",
+    "deploy": "npm run build & npm run ghpages",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "json:server": "json-server --watch db.json",
+    "json:server:routes": "json-server --watch db.json --routes routes.json"
   },
   "private": true,
   "dependencies": {
