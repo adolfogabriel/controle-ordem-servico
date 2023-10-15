@@ -1,0 +1,22 @@
+<h2>Lista de Os´s</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Telefone</th>
+    <th>Cpf</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let os of os">
+    <td><a [routerLink]="['/detalhes', os.id]">{{ os.id }}</a></td>
+    <td>{{ os.nome }}</td>
+    <td>{{ os.email }}</td>
+    <td>{{ os.telefone | telefone }}</td>
+    <td>{{ os.cpf | cpf }}</td>
+  </tr>
+  </tbody>
+</table>

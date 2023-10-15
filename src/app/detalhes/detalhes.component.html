@@ -1,1 +1,23 @@
-<h2>Detalhes do Item {{ id }}</h2>
+<h2>Detalhes da Ordem de Serviço (ID: {{ osId }})</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Telefone</th>
+    <th>Cpf</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{ osDetalhes.nome }}</td>
+    <td>{{ osDetalhes.email }}</td>
+    <td>{{ osDetalhes.telefone | telefone }}</td>
+    <td>{{ osDetalhes.cpf | cpf }}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+
