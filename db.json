@@ -3,23 +3,9 @@
     {
       "nome": "adolfo",
       "email": "adolfo@adolfo.com",
-      "telefone": "61991261211",
-      "cpf": "72117567134",
-      "id": 1
-    },
-    {
-      "nome": "Adolfo Gabriel Capparelli",
-      "email": "gabrielcapparelli@hotmail.com",
-      "telefone": "61991261211",
-      "cpf": "61991261211",
-      "id": 2
-    },
-    {
-      "nome": "teste",
-      "email": "teste@teste.com",
-      "telefone": "61991261211",
+      "telefone": "11111111111",
       "cpf": "11111111111",
-      "id": 3
+      "id": 1
     }
   ]
 }

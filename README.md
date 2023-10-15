@@ -4,9 +4,13 @@ Um projeto em Angular que permita cadastrar ordens de serviço (OS) e listar as 
 
 O frontend da aplicação foi desenvolvido com Angular e o backend foi simulado pela implementação de uma API Fake, usando o JSON Server.
 
+# login TESTE
+usuario:adolfo
+senha:123456
+
 ## Endereço de Deploy - GitHub Pages
 
-https://utfpr-gp.github.io/roubank-app/
+https://adolfogabriel.github.io/controle-ordem-servico/
 
 ## Protótipo
 
