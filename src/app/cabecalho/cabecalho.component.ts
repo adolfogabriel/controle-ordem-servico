@@ -9,7 +9,7 @@ export class CabecalhoComponent {
   @Input() dadosLogin: { usuario: string} | undefined;
   title = 'Controle ordem servico';
 
-  onButtonClick() {
-    alert('Botão clicado!');
+  onLinkClick() {
+    alert("Obrigado "+ this.dadosLogin?.usuario +"!");
   }
 }
