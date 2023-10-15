@@ -1,32 +1,3 @@
 {
-  "os": [
-    {
-      "nome": "Adolfo Gabriel Capparelli",
-      "email": "gabrielcapparelli@hotmail.com",
-      "telefone": "61991261211",
-      "cpf": "61991261211",
-      "id": 1
-    },
-    {
-      "nome": "adolfo",
-      "email": "adolfo@adolfo.com",
-      "telefone": "11111111111",
-      "cpf": "11111111111",
-      "id": 2
-    },
-    {
-      "nome": "Adolfo Gabriel Capparelli",
-      "email": "gabrielcapparelli@hotmail.com",
-      "telefone": "61991261211",
-      "cpf": "61991261211",
-      "id": 3
-    },
-    {
-      "nome": "asdasd",
-      "email": "gfg2@gg.com",
-      "telefone": "61991261211",
-      "cpf": "12312312354",
-      "id": 4
-    }
-  ]
+  "os": []
 }

@@ -16,8 +16,8 @@ export class OsService {
     return this.http.get(this.Url).toPromise();
   }
 
-  postOs(data: any): Observable<any> {
-    return this.http.post(this.Url, data);
+  postOs(data: any): Promise<any> {
+    return this.http.post(this.Url, data).toPromise();
   }
 
   getOsId(id: number): Observable<any> {

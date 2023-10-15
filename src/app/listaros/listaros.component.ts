@@ -18,7 +18,7 @@ export class ListarosComponent implements OnInit {
         this.os = response;
       })
       .catch((error) => {
-        console.error('Erro na requisição:', error);
+        alert('Erro na requisição:' + error);
       });
   }
 }
