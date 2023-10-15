@@ -15,6 +15,7 @@ import {CadastroComponent} from './cadastro/cadastro.component';
 import {ListarosComponent} from "./listaros/listaros.component";
 import {CpfPipe} from './pipe/cpf.pipe';
 import {TelefonePipe} from './pipe/telefone.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,13 @@ import {TelefonePipe} from './pipe/telefone.pipe';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

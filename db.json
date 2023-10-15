@@ -1,3 +1,18 @@
 {
-  "os": []
+  "os": [
+    {
+      "nome": "adolfo",
+      "email": "adolfo@adolfo.com",
+      "telefone": "61991261211",
+      "cpf": "72117567134",
+      "id": 1
+    },
+    {
+      "nome": "Adolfo Gabriel Capparelli",
+      "email": "gabrielcapparelli@hotmail.com",
+      "telefone": "61991261211",
+      "cpf": "61991261211",
+      "id": 2
+    }
+  ]
 }
